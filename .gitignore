@@ -1,0 +1,14 @@
+.runtime/
+.venv/
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+.env
+.env.*
+!.env.example
+.aws/
+private/
+uploads/
+user_data/
+artifacts/*.log
+artifacts/*.xml
