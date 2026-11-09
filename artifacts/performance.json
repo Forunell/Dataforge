@@ -1,0 +1,56 @@
+{
+  "date": "2026-11-07",
+  "python": "3.12.10",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "cases": [
+    {
+      "case": "csv-2000",
+      "rows_per_file": 2000,
+      "columns": 5,
+      "bytes_per_file": 62924,
+      "parse_seconds": 0.043,
+      "analyze_seconds": 0.119,
+      "export_seconds": 1.362,
+      "total_seconds": 1.525,
+      "zip_bytes": 183883,
+      "status": "PASS"
+    },
+    {
+      "case": "xlsx-2000",
+      "rows_per_file": 2000,
+      "columns": 5,
+      "bytes_per_file": 49515,
+      "parse_seconds": 0.371,
+      "analyze_seconds": 0.166,
+      "export_seconds": 1.375,
+      "total_seconds": 1.912,
+      "zip_bytes": 185370,
+      "status": "PASS"
+    },
+    {
+      "case": "csv-2000x64",
+      "rows_per_file": 2000,
+      "columns": 64,
+      "bytes_per_file": 653386,
+      "parse_seconds": 0.197,
+      "analyze_seconds": 0.232,
+      "export_seconds": 1.685,
+      "total_seconds": 2.113,
+      "zip_bytes": 272221,
+      "status": "PASS"
+    },
+    {
+      "case": "csv-near-2mb",
+      "rows_per_file": 2000,
+      "columns": 5,
+      "bytes_per_file": 1856034,
+      "parse_seconds": 0.318,
+      "analyze_seconds": 0.161,
+      "export_seconds": 1.935,
+      "total_seconds": 2.414,
+      "zip_bytes": 199297,
+      "status": "PASS"
+    }
+  ],
+  "scope": "Single run per synthetic case on this machine. Not a universal speed or memory guarantee."
+}

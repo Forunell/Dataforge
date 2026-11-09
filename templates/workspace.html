@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% macro hidden() %}<input type="hidden" name="csrf" value="{{ state.csrf }}">{% endmacro %}
+{% macro revision() %}{{ hidden() }}<input type="hidden" name="revision" value="{{ state.revision }}">{% endmacro %}
+{% macro raw_table(source) %}
+<div class="table-scroll" tabindex="0" role="region" aria-label="Попередній перегляд {{ source.name }}"><table><thead><tr><th>Рядок</th>{% for h in source.headers %}<th>{{ h }}</th>{% endfor %}</tr></thead><tbody>{% for row in source.rows[:5] %}<tr><td>{{ loop.index + 1 }}</td>{% for cell in row %}<td class="preserve">{{ cell if cell else '∅' }}</td>{% endfor %}</tr>{% endfor %}</tbody></table></div>
+{% endmacro %}
+{% block content %}
+<div class="heading-row"><div><div class="eyebrow">КОНТРОЛЬ ЯКОСТІ / КАТАЛОГ</div><h1>{{ {1:'Чисті дані починаються тут.',2:'Знайдемо спільну мову.',3:'Усі зміни — перед очима.',4:'Звіти готові до завантаження.'}[step] }}</h1><p class="subtitle">Зіставте два прайси, знайдіть помилки та підготуйте прозорий експорт.</p></div>{% if state.sources or state.pending %}<form method="post" action="/reset">{{ hidden() }}<button class="button subtle" type="submit">↺ Почати заново</button></form>{% endif %}</div>
+<nav class="steps" aria-label="Кроки обробки">{% for n, title in [(1,'Завантаження'),(2,'Колонки і правила'),(3,'Перевірка'),(4,'Експорт')] %}{% set enabled = n == 1 or (n == 2 and state.sources) or (n == 3 and state.result) or (n == 4 and state.files) %}{% if enabled %}<a href="/step/{{ n }}" class="step {{ 'active' if step == n else 'done' if n < step else '' }}" {% if step == n %}aria-current="step"{% endif %}><span>{{ '%02d'|format(n) }}</span>{{ title }}</a>{% else %}<span class="step disabled" aria-disabled="true"><span>{{ '%02d'|format(n) }}</span>{{ title }}</span>{% endif %}{% endfor %}</nav>
+{% if state.demo %}<div class="demo-banner" role="status"><strong>Демодані</strong> · Синтетичні джерела: {% for demo in state.demo_sources %}{% if demo %}{{ "AB"[loop.index0] }} {% endif %}{% endfor %}. Не є даними користувача.</div>{% endif %}
+{% if error %}<div class="alert error" role="alert"><strong>Перевірте введені дані.</strong> {{ error }}</div>{% endif %}
+{% if step == 1 %}{% include 'upload.html' %}
+{% elif step == 2 %}{% include 'mapping.html' %}
+{% elif step == 3 %}{% include 'review.html' %}
+{% elif step == 4 %}{% include 'export.html' %}{% endif %}
+<details id="help" class="card help"><summary>Довідка · як працює DataForge <span>⌄</span></summary><p>1. Виберіть A та B, для книги — потрібний аркуш. 2. Підтвердьте колонки та правила. 3. Перевірте проблеми й зміни; виправлення спочатку показуються як «було → стане». 4. Створіть звіти та завантажте їх.</p><p>Файли обробляє локальний Python-сервер на цьому комп’ютері, не браузер. Дані зберігаються у пам’яті до скидання, завершення сервера або години бездіяльності (очищення під час наступного запиту). Закриття вкладки не очищає сервер негайно. Для завершення натисніть «Почати заново».</p><p>Номер рядка CSV — номер запису з урахуванням заголовка; перенос усередині лапок не створює окремий запис. XLSX — номер рядка вибраного аркуша. Порожні записи не видаляються.</p><p>Якість = рядки без помилок і попереджень / усі рядки A+B × 100%. Рядок із помилкою та попередженням входить лише до категорії помилок. Кількість проблем може перевищувати кількість рядків. Конфлікт зіставлення блокує основний каталог навіть за відсутності критичних помилок.</p></details>
+{% endblock %}

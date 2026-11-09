@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DataForge — майстерня товарних даних</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='10' fill='%231b473b'/%3E%3Cpath d='M12 10h16v6H18v4h8v6h-8v5h-6z' fill='%23d6ef80'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="/static/style.css"><script defer src="/static/app.js"></script>
+</head>
+<body>
+<a class="skip" href="#main">До основного вмісту</a>
+<div class="shell">
+<aside class="sidebar">
+  <a href="/" class="brand"><span class="brand-mark">F<span></span></span>DataForge</a>
+  <div class="workspace-label">РОБОЧИЙ ПРОСТІР</div>
+  <div class="nav-current"><span>▦</span> Якість каталогу <span class="nav-arrow">↗</span></div>
+  {% if state is defined and state.sources %}<a class="side-link" href="/step/1">▤ Джерела даних</a><a class="side-link" href="/step/2#rules">☷ Правила перевірки</a>{% endif %}
+  {% if state is defined and state.result %}<a class="side-link" href="/step/3#corrections">↺ Виправлення сесії</a>{% endif %}
+  <a class="side-link" href="/#help">ⓘ Довідка</a>
+  <div class="side-context"><span class="tiny-label">ВАШ ПРОЦЕС</span><h3>Від сирих даних<br>до впевнених рішень.</h3><p>Два джерела. Прозорі правила. Кожен рядок під контролем.</p><div class="mini-grid" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
+  <div class="local-note"><span class="status-dot"></span> Працює локально<p>Файли залишаються на цьому комп’ютері. Інтеграцій із маркетплейсами немає.</p></div>
+  <div class="side-footer">ЛОКАЛЬНИЙ ІНСТРУМЕНТ <span>v1.1</span></div>
+</aside>
+<div class="main-shell">
+<header class="topbar"><span>Майстерня даних <span class="breadcrumb">/ Якість каталогу</span></span><span class="privacy-pill"><span class="status-dot"></span> Локальна сесія</span></header>
+<main id="main">{% block content %}{% endblock %}</main>
+<footer class="footer"><span>DataForge · спочатку перевірка, потім зміни</span><span>Без хмари. Без прихованих перетворень.</span></footer>
+</div>
+</div>
+<div id="busy" class="busy" hidden role="status" aria-live="polite"><div class="busy-card"><span class="spinner"></span><strong>Опрацьовуємо дані…</strong><p>Зачекайте, ця сторінка оновиться.</p><div class="skeleton"></div><div class="skeleton short"></div></div></div>
+</body></html>

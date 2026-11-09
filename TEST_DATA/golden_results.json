@@ -1,0 +1,34 @@
+{
+  "demo": {
+    "rows": 22,
+    "errors": 12,
+    "warnings": 4,
+    "quality": 45.5,
+    "row_counts": {
+      "ok": 10,
+      "warning": 4,
+      "error": 8
+    },
+    "comparison_counts": {
+      "changed": 1,
+      "unchanged": 2,
+      "blocked": 8,
+      "removed": 3,
+      "new": 3
+    },
+    "transforms": 2,
+    "change_events": 16
+  },
+  "clean": {
+    "rows": 6,
+    "errors": 0,
+    "warnings": 0,
+    "quality": 100,
+    "comparison_counts": {
+      "unchanged": 1,
+      "changed": 1,
+      "removed": 1,
+      "new": 1
+    }
+  }
+}

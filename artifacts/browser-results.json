@@ -1,0 +1,167 @@
+{
+  "date": "2026-11-07",
+  "engine": "Microsoft Edge / Playwright",
+  "results": [
+    {
+      "width": 1440,
+      "scenario": "step-1",
+      "status": "PASS",
+      "horizontal_overflow": false
+    },
+    {
+      "width": 1440,
+      "scenario": "step-2",
+      "status": "PASS",
+      "horizontal_overflow": false
+    },
+    {
+      "width": 1440,
+      "scenario": "step-3",
+      "status": "PASS",
+      "horizontal_overflow": false
+    },
+    {
+      "width": 1440,
+      "scenario": "manual preview/apply/undo",
+      "status": "PASS"
+    },
+    {
+      "width": 1440,
+      "scenario": "step-4",
+      "status": "PASS",
+      "horizontal_overflow": false
+    },
+    {
+      "width": 1440,
+      "scenario": "clean-review",
+      "status": "PASS",
+      "horizontal_overflow": false
+    },
+    {
+      "width": 1440,
+      "scenario": "clean-export",
+      "status": "PASS",
+      "horizontal_overflow": false
+    },
+    {
+      "width": 1440,
+      "scenario": "single-file replacement invalidates export",
+      "status": "PASS"
+    },
+    {
+      "width": 1440,
+      "scenario": "CP1251 failure and recovery",
+      "status": "PASS"
+    },
+    {
+      "width": 1440,
+      "scenario": "drag/drop and multisheet with empty first sheet",
+      "status": "PASS"
+    },
+    {
+      "width": 768,
+      "scenario": "step-1",
+      "status": "PASS",
+      "horizontal_overflow": false
+    },
+    {
+      "width": 768,
+      "scenario": "step-2",
+      "status": "PASS",
+      "horizontal_overflow": false
+    },
+    {
+      "width": 768,
+      "scenario": "step-3",
+      "status": "PASS",
+      "horizontal_overflow": false
+    },
+    {
+      "width": 768,
+      "scenario": "manual preview/apply/undo",
+      "status": "PASS"
+    },
+    {
+      "width": 768,
+      "scenario": "step-4",
+      "status": "PASS",
+      "horizontal_overflow": false
+    },
+    {
+      "width": 768,
+      "scenario": "clean-review",
+      "status": "PASS",
+      "horizontal_overflow": false
+    },
+    {
+      "width": 768,
+      "scenario": "clean-export",
+      "status": "PASS",
+      "horizontal_overflow": false
+    },
+    {
+      "width": 768,
+      "scenario": "single-file replacement invalidates export",
+      "status": "PASS"
+    },
+    {
+      "width": 768,
+      "scenario": "CP1251 failure and recovery",
+      "status": "PASS"
+    },
+    {
+      "width": 390,
+      "scenario": "step-1",
+      "status": "PASS",
+      "horizontal_overflow": false
+    },
+    {
+      "width": 390,
+      "scenario": "step-2",
+      "status": "PASS",
+      "horizontal_overflow": false
+    },
+    {
+      "width": 390,
+      "scenario": "step-3",
+      "status": "PASS",
+      "horizontal_overflow": false
+    },
+    {
+      "width": 390,
+      "scenario": "manual preview/apply/undo",
+      "status": "PASS"
+    },
+    {
+      "width": 390,
+      "scenario": "step-4",
+      "status": "PASS",
+      "horizontal_overflow": false
+    },
+    {
+      "width": 390,
+      "scenario": "clean-review",
+      "status": "PASS",
+      "horizontal_overflow": false
+    },
+    {
+      "width": 390,
+      "scenario": "clean-export",
+      "status": "PASS",
+      "horizontal_overflow": false
+    },
+    {
+      "width": 390,
+      "scenario": "single-file replacement invalidates export",
+      "status": "PASS"
+    },
+    {
+      "width": 390,
+      "scenario": "CP1251 failure and recovery",
+      "status": "PASS"
+    }
+  ],
+  "js_errors": [],
+  "external_app_requests": [],
+  "server_errors": []
+}

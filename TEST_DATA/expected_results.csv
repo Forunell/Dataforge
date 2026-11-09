@@ -1,0 +1,13 @@
+﻿fixture,expected
+supplier_a.csv,12 rows; SKU 000123 preserved; duplicates DUP-05; negative price/stock; required fields; formula warning
+supplier_b.xlsx,10 rows; numeric errors BAD-12; unsupported currency CUR-13; missing name NAME-14; formula SKU warning
+"demo, no rules, comparison enabled",22 rows; 12 errors; 4 warnings; 2 transformations; 16 events; 17 comparison records; quality 45.5%
+BAG-03 comparison,currency event USD -> EUR; stock 8 -> 6; NO price event
+000123 comparison,price 129.90 -> 139.90; stock 12 -> 10
+cp1251.csv,auto rejected; manual cp1251 gives 1 row and Cyrillic intact
+comma.csv,"1 row; quoted comma, quotes and newline intact"
+blank_row.csv,"2 rows, blank product retained with 5 required issues"
+injection.csv,6 rows; CSV dangerous text starts with protective apostrophe; XLSX string cells
+broken.csv / broken.xlsx / empty.csv,controlled DataError; no crash or partial replacement
+oversize.csv / too_many_rows.csv,controlled size / row limit rejection
+numeric_sku.xlsx,000123 restored from zero format; typed_sku warning
